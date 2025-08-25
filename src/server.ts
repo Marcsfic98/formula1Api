@@ -9,6 +9,13 @@ server.get("/teams", async (request , response)=>{
     return [{id:1 , name:"ferrari"}];
 });
 
+server.get("/drivers", async (request, response) => {
+    response.type("application/json").code(200)
+    return [
+        {id:1 , name:"Max Verstappen", team:"Red Bull"}
+    ];
+})
+
 server.listen({port:3333},()=> {
     console.log("server init");
 });
