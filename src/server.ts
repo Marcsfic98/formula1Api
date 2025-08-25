@@ -8,6 +8,11 @@ const teams = [
     {id:1 , name:"McLaren", base:"Reino unido"},
     {id:1 , name:"Mercedes", base:"Reino unido"},
     {id:1 , name:"Red Bull", base:"Reino unido"}
+];
+
+const drivers = [
+    {id:1 , name:"Max Verstappen", team:"Red Bull"},
+    {id:1 , name:"Lewis Hamilton", team:"ferrari"},
 ]
 
 server.get("/teams", async (request , response)=>{
@@ -17,9 +22,7 @@ server.get("/teams", async (request , response)=>{
 
 server.get("/drivers", async (request, response) => {
     response.type("application/json").code(200)
-    return [
-        {id:1 , name:"Max Verstappen", team:"Red Bull"}
-    ];
+    return [drivers];
 })
 
 server.listen({port:3333},()=> {
